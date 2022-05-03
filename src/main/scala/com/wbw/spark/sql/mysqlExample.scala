@@ -25,7 +25,7 @@ object mysqlExample {
     ds.sparkSession.read
       .jdbc("jdbc:mysql://remotehost:3306/spark_sql?useSSL=false", "user", properties)
       .show()
-    spark.stop()
+    spark.close()
   }
 
   case class User(name:String, age:Long)
